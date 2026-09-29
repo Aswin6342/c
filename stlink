@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node {
+int data;
+struct Node *next;
+};
+struct Node *top= NULL;
+
+void push(){
+struct Node *newNode =(struct Node*) malloc(sizeof(struct Node));
+if(newNode==NULL){
+printf("stack overflow\n");
+return;
+}
+newNode->data=value;
+newNode->next=top;
+printf("%d pushed to stack\n",value);
+}
+void pop(){
+if(top == NULL){
+printf("stack underflow\n");
+}
+struct Node *temp =top;
+printf("%d popped fom stack\n",top->data);
+top=top->next;
+free(temp);
+}
+void display(){
+if(top==NULL){
+printf("stack is empty\n");
+return;
+}
+struct Node *temp =top;
+printf("stack elements:\n");
+while(temp!=NULL){
+printf("%d-->",temp->data);
+temp=temp->next;
+}
+printf("NULL"\n);
+}
+int main()
