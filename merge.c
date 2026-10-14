@@ -9,15 +9,17 @@ int main(void) {
     scanf("%d", &n1);
 
     printf("Enter %d elements: ", n1);
-    for (i = 0; i < n1; i++)
+    for (i = 0; i < n1; i++){
         scanf("%d", &a[i]);
+    }
 
     printf("Enter size of second array: ");
     scanf("%d", &n2);
 
     printf("Enter %d elements: ", n2);
-    for (i = 0; i < n2; i++)
+    for (i = 0; i < n2; i++){
         scanf("%d", &b[i]);
+    }
 
     for (i = 0; i < n1 - 1; i++) {
         for (j = 0; j < n1 - 1 - i; j++) {
