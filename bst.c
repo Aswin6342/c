@@ -12,7 +12,8 @@ struct Node* createNode(int data) {
     newNode->left = NULL;
     newNode->right = NULL;
 
-    return newNode;
+    return newNode:wq
+        ;
 }
 
 // Insertion
