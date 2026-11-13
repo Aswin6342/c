@@ -45,6 +45,21 @@ struct Node* minNode(struct Node* root) {
     return root;
 }
 
+
+
+// Search for a node
+struct Node* search(struct Node* root, int key) {
+    if (root == NULL || root->data == key)
+        return root;
+
+    if (key < root->data)
+        return search(root->left, key);
+    else
+        return search(root->right, key);
+}
+
+
+
 // Delete a node
 struct Node* deleteNode(struct Node* root, int key) {
     if (root == NULL)
@@ -124,7 +139,8 @@ int main() {
         printf("3. Inorder\n");
         printf("4. Preorder\n");
         printf("5. Postorder\n");
-        printf("6. Exit\n");
+printf("6. Search\n");
+printf("7. Exit\n");
 
         printf("Enter choice: ");
 
@@ -180,8 +196,22 @@ int main() {
                 printf("\n");
                 break;
 
-            case 6:
-                return 0;
+            case 6: {
+    printf("Enter value to search: ");
+    scanf("%d", &value);
+
+    struct Node* result = search(root, value);
+
+    if (result == NULL)
+        printf("%d not found in the tree.\n", value);
+    else
+        printf("%d found in the tree.\n", value);
+
+    break;
+}
+
+case 7:
+    return 0;
 
             default:
                 printf("Invalid choice.\n");
